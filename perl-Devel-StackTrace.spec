@@ -5,18 +5,18 @@
 %define	pdir	Devel
 %define	pnam	StackTrace
 Summary:	Devel::StackTrace - Stack trace and stack trace frame objects
-#Summary(pl):	
+Summary(pl):	Devel::StackTrace - ¶ledzenie stosu i ramek obiektów
 Name:		perl-%{pdir}-%{pnam}
 Version:	1.00
 Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.005
 %if %{?_without_tests:0}%{!?_without_tests:1}
 BuildRequires:	perl(fields)
 %endif
+BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,7 +45,6 @@ perl Makefile.PL
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
