@@ -8,12 +8,12 @@
 Summary:	Devel::StackTrace - Stack trace and stack trace frame objects
 Summary(pl):	Devel::StackTrace - ¶ledzenie stosu i ramek obiektów
 Name:		perl-%{pdir}-%{pnam}
-Version:	1.03
-Release:	2
+Version:	1.04
+Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	520a34bfa71d7614ecb9a0c0dea2ef61
+# Source0-md5:	43066b259f702369f0bfbc0e6363566b
 BuildRequires:	perl-devel >= 5.005
 %if %{!?_without_tests:1}0
 BuildRequires:	perl(fields)
