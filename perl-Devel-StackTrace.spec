@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Devel
@@ -10,14 +10,14 @@ Summary(pl):	Devel::StackTrace - ¶ledzenie stosu i ramek obiektów
 Name:		perl-%{pdir}-%{pnam}
 Version:	1.10
 Release:	1
-License:	GPL/Artistic
+# same as perl
+License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	aa319f083d6a9ed28612fe601f046806
-BuildRequires:	perl-devel >= 5.005
-%if %{!?_without_tests:1}0
-BuildRequires:	perl(fields)
-%endif
+BuildRequires:	perl-Module-Build
+%{?with_tests:BuildRequires:	perl-Test-Simple >= 0.46}
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -38,17 +38,17 @@ prostego interfejsu do tych danych.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
-%{__make}
+%{__perl} Build.PL \
+	installdirs=vendor
+./Build
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-#%{__make} install DESTDIR=$RPM_BUILD_ROOT
-./Build install destdir=$RPM_BUILD_ROOT
+./Build install \
+	destdir=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -56,5 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE Changes README
-%{perl_vendorlib}/%{pdir}/%{pnam}.pm
+%{perl_vendorlib}/Devel/StackTrace.pm
 %{_mandir}/man3/*
