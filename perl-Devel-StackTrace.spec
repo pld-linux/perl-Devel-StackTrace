@@ -1,19 +1,20 @@
 #
 # Conditional build:
 # _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Devel
 %define	pnam	StackTrace
 Summary:	Devel::StackTrace - Stack trace and stack trace frame objects
 Summary(pl):	Devel::StackTrace - ¶ledzenie stosu i ramek obiektów
 Name:		perl-%{pdir}-%{pnam}
-Version:	1.02
+Version:	1.03
 Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	perl >= 5.005
-%if %{?_without_tests:0}%{!?_without_tests:1}
+%if %{!?_without_tests:1}0
 BuildRequires:	perl(fields)
 %endif
 BuildRequires:	rpm-perlprov >= 3.0.3-16
