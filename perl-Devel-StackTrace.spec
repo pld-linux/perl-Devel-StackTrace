@@ -17,7 +17,7 @@ BuildRequires:	perl >= 5.005
 %if %{!?_without_tests:1}0
 BuildRequires:	perl(fields)
 %endif
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.0.2-104
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
