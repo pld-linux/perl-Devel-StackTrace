@@ -1,16 +1,22 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Devel
 %define	pnam	StackTrace
-Summary:	%{pdir}::%{pnam} perl module
-Summary(pl):	Modu³ perla %{pdir}::%{pnam}
+Summary:	Devel::StackTrace - Stack trace and stack trace frame objects
+#Summary(pl):	
 Name:		perl-%{pdir}-%{pnam}
-Version:	0.9
+Version:	1.00
 Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.005
+%if %{?_without_tests:0}%{!?_without_tests:1}
+BuildRequires:	perl(fields)
+%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,7 +38,8 @@ prostego interfejsu do tych danych.
 %build
 perl Makefile.PL
 %{__make}
-%{__make} test
+
+%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
