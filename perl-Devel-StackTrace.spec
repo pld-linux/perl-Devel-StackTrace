@@ -7,7 +7,7 @@
 %define	pnam	StackTrace
 Summary:	Devel::StackTrace - stack trace and stack trace frame objects
 Summary(pl):	Devel::StackTrace - ¶ledzenie stosu i ramek obiektów
-Name:		perl-%{pdir}-%{pnam}
+Name:		perl-Devel-StackTrace
 Version:	1.11
 Release:	2
 # same as perl
