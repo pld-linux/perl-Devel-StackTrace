@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Devel
 %define	pnam	StackTrace
-Summary:	Devel::StackTrace - Stack trace and stack trace frame objects
+Summary:	Devel::StackTrace - stack trace and stack trace frame objects
 Summary(pl):	Devel::StackTrace - ¶ledzenie stosu i ramek obiektów
 Name:		perl-%{pdir}-%{pnam}
 Version:	1.11
