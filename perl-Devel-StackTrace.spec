@@ -8,13 +8,14 @@
 Summary:	Devel::StackTrace - stack trace and stack trace frame objects
 Summary(pl):	Devel::StackTrace - ¶ledzenie stosu i ramek obiektów
 Name:		perl-Devel-StackTrace
-Version:	1.12
+Version:	1.13
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	1ba3c261e798dbd52517b458c415b6e4
+# Source0-md5:	35d85c3f2c91c1de389b13436659551a
+URL:		http://search.cpan.org/dist/Devel-StackTrace/
 BuildRequires:	perl-Module-Build
 %{?with_tests:BuildRequires:	perl-Test-Simple >= 0.46}
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -24,15 +25,15 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The Devel::StackTrace module contains two classes, Devel::StackTrace
-and Devel::StackTraceFrame.  The goal of this object is to encapsulate
-the information that can found through using the caller() function,
-as well as providing a simple interface to this data.
+and Devel::StackTraceFrame. The goal of this object is to encapsulate
+the information that can found through using the caller() function, as
+well as providing a simple interface to this data.
 
 %description -l pl
-Modu³ Devel::StackTrace zawiera dwie klasy: Devel::StackTrace
-i Devel::StackTraceFrame.  Zadaniem tego obiektu jest obudowanie
-znalezionej przy u¿yciu funkcji caller() informacji, oraz udostêpnienie
-prostego interfejsu do tych danych.
+Modu³ Devel::StackTrace zawiera dwie klasy: Devel::StackTrace i
+Devel::StackTraceFrame. Zadaniem tego obiektu jest obudowanie
+znalezionej przy u¿yciu funkcji caller() informacji, oraz
+udostêpnienie prostego interfejsu do tych danych.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
