@@ -6,7 +6,7 @@
 %define		pdir	Devel
 %define		pnam	StackTrace
 Summary:	Devel::StackTrace - stack trace and stack trace frame objects
-Summary(pl):	Devel::StackTrace - ¶ledzenie stosu i ramek obiektów
+Summary(pl.UTF-8):   Devel::StackTrace - Å›ledzenie stosu i ramek obiektÃ³w
 Name:		perl-Devel-StackTrace
 Version:	1.13
 Release:	1
@@ -29,11 +29,11 @@ and Devel::StackTraceFrame. The goal of this object is to encapsulate
 the information that can found through using the caller() function, as
 well as providing a simple interface to this data.
 
-%description -l pl
-Modu³ Devel::StackTrace zawiera dwie klasy: Devel::StackTrace i
+%description -l pl.UTF-8
+ModuÅ‚ Devel::StackTrace zawiera dwie klasy: Devel::StackTrace i
 Devel::StackTraceFrame. Zadaniem tego obiektu jest obudowanie
-znalezionej przy u¿yciu funkcji caller() informacji, oraz
-udostêpnienie prostego interfejsu do tych danych.
+znalezionej przy uÅ¼yciu funkcji caller() informacji, oraz
+udostÄ™pnienie prostego interfejsu do tych danych.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
