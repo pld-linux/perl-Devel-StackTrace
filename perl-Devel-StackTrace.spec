@@ -6,7 +6,7 @@
 %define		pdir	Devel
 %define		pnam	StackTrace
 Summary:	Devel::StackTrace - stack trace and stack trace frame objects
-Summary(pl.UTF-8):   Devel::StackTrace - śledzenie stosu i ramek obiektów
+Summary(pl.UTF-8):	Devel::StackTrace - śledzenie stosu i ramek obiektów
 Name:		perl-Devel-StackTrace
 Version:	1.13
 Release:	1
