@@ -8,13 +8,12 @@
 Summary:	Devel::StackTrace - stack trace and stack trace frame objects
 Summary(pl.UTF-8):	Devel::StackTrace - śledzenie stosu i ramek obiektów
 Name:		perl-Devel-StackTrace
-Version:	1.20
+Version:	1.22
 Release:	1
-# same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	86beb2e26a674718264d6c513ca071ff
+# Source0-md5:	e114310258a893ac3454fb0b36a57166
 URL:		http://search.cpan.org/dist/Devel-StackTrace/
 BuildRequires:	perl-Module-Build
 %{?with_tests:BuildRequires:	perl-Test-Simple >= 0.46}
