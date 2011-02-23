@@ -8,14 +8,13 @@
 Summary:	Devel::StackTrace - stack trace and stack trace frame objects
 Summary(pl.UTF-8):	Devel::StackTrace - śledzenie stosu i ramek obiektów
 Name:		perl-Devel-StackTrace
-Version:	1.22
+Version:	1.27
 Release:	1
-License:	GPL v1+ or Artistic
+License:	Artistic 2.0
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	e114310258a893ac3454fb0b36a57166
+Source0:	http://www.cpan.org/modules/by-module/Devel/DROLSKY/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	72ba07f2dc0331d8ce3c028cc66cf20d
 URL:		http://search.cpan.org/dist/Devel-StackTrace/
-BuildRequires:	perl-Module-Build
 %{?with_tests:BuildRequires:	perl-Test-Simple >= 0.46}
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -38,23 +37,25 @@ udostępnienie prostego interfejsu do tych danych.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Build.PL \
-	installdirs=vendor
-./Build
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
 
-%{?with_tests:./Build test}
+%{__make}
+
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-./Build install \
-	destdir=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc LICENSE Changes README
+%doc Changes LICENSE README
 %{perl_vendorlib}/Devel/StackTrace.pm
-%{_mandir}/man3/*
+%{perl_vendorlib}/Devel/StackTrace
+%{_mandir}/man3/Devel::StackTrace*.3pm*
