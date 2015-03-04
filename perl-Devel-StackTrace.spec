@@ -12,10 +12,10 @@ Version:	2.00
 Release:	1
 License:	Artistic 2.0
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Devel/DROLSKY/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	826ed2bc7cdd8d852d7d2d8b69aa313c
 URL:		http://search.cpan.org/dist/Devel-StackTrace/
-%{?with_tests:BuildRequires:	perl-Test-Simple >= 0.46}
+%{?with_tests:BuildRequires:	perl-Test-Simple >= 0.88}
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
