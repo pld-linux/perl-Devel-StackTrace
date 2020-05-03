@@ -13,10 +13,11 @@ License:	Artistic v2.0
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	a5b09f7be7f2b10b525a9740676906d8
-URL:		http://search.cpan.org/dist/Devel-StackTrace/
+URL:		https://metacpan.org/release/Devel-StackTrace
 %{?with_tests:BuildRequires:	perl-Test-Simple >= 0.96}
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
