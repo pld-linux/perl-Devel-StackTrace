@@ -1,19 +1,20 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define		pdir	Devel
 %define		pnam	StackTrace
 Summary:	Devel::StackTrace - stack trace and stack trace frame objects
 Summary(pl.UTF-8):	Devel::StackTrace - śledzenie stosu i ramek obiektów
 Name:		perl-Devel-StackTrace
-Version:	2.04
+Version:	2.05
 Release:	1
 License:	Artistic v2.0
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a5b09f7be7f2b10b525a9740676906d8
-URL:		https://metacpan.org/release/Devel-StackTrace
+Source0:	https://www.cpan.org/modules/by-module/Devel/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	b8ca19bb4c76e98a04373618db9c7c3c
+URL:		https://metacpan.org/dist/Devel-StackTrace
+BuildRequires:	perl-ExtUtils-MakeMaker
 %{?with_tests:BuildRequires:	perl-Test-Simple >= 0.96}
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
